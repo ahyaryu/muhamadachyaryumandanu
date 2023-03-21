@@ -1,2 +1,0 @@
-SELECT `tb_siswa`.`no`,`tb_siswa`.`nis`,`tb_siswa`.`nama_siswa`,`tb_kelas`.`nama_kelas`,`mata_pelajaran`.`nama_pelajaran` FROM `tb_siswa` INNER JOIN `mata_pelajaran` ON `tb_siswa`.`nis`=`mata_pelajaran`.`nis` INNER JOIN `tb_kelas` ON `tb_kelas`.`kode_pelajaran`=`mata_pelajaran`.`no_pelajaran`;
-
