@@ -214,20 +214,15 @@ include('ceki.php');
         <div class="row">
 
           <!-- menunggu di verifikasi -->
-          <div class="col-lg-3 col-6">
                 <?php 
                 $query = mysqli_query($qw, "SELECT * FROM pengaduan WHERE status='0'");
                 if($data = mysqli_num_rows($query)) 
                 {
                 ?>
+          <div class="col-lg-3 col-6">
             <div class="small-box bg-info">
               <div class="inner">
-                <?php
-                if($data > 0){
-                echo "<h3> $data </h3>";
-                }else{
-                  echo "<h3>0</h3>";
-                }?>
+                <h3> <?= $data ?> </h3>
                 <p>Laporan Masuk</p>
               </div>
               <div class="icon">
@@ -235,28 +230,23 @@ include('ceki.php');
               </div>
               <a href="verifikasi.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
+          </div>
             <?php
                 }
                 ?>
-          </div>
           <!-- ./col -->
 
           <!-- menunggu di tanggapi -->
-          <div class="col-lg-3 col-6">
                 <?php 
-                $query = mysqli_query($qw, "SELECT * FROM pengaduan WHERE status='proses'");
+                $query2 = mysqli_query($qw, "SELECT * FROM pengaduan WHERE status='proses'");
                 $no = 1;
-                if($dat = mysqli_num_rows($query)) 
+                if($dat2 = mysqli_num_rows($query2)) 
                 {
                 ?>
+          <div class="col-lg-3 col-6">
             <div class="small-box bg-warning">
               <div class="inner">
-              <?php
-                if($dat > 0){
-                echo "<h3> $dat </h3>";
-                }else{
-                  echo "<h3>0</h3>";
-                }?>
+                <h3> <?= $dat2 ?> </h3>
                 <p>Laporan Menunggu tanggapan</p>
               </div>
               <div class="icon">
@@ -264,27 +254,22 @@ include('ceki.php');
               </div>
               <a href="Tanggapan.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
+          </div>
                 <?php
                 }
                 ?>
-          </div>
 
           <!-- Ditolak -->
-          <div class="col-lg-3 col-6">
                 <?php 
-                $query = mysqli_query($qw, "SELECT * FROM pengaduan WHERE status='Tolak'");
+                $query3 = mysqli_query($qw, "SELECT * FROM pengaduan WHERE status='Tolak'");
                 $no = 1;
-                if($dat = mysqli_num_rows($query)) 
+                if($dat3 = mysqli_num_rows($query3)) 
                 {
                 ?>
+          <div class="col-lg-3 col-6">
             <div class="small-box bg-danger">
               <div class="inner">
-              <?php
-                if($dat > 0){
-                echo "<h3> $dat </h3>";
-                }else{
-                  echo "<h3>0</h3>";
-                }?>
+              <h3><?= $dat3 ?></h3>
                 <p>Laporan yang telah di tolak</p>
               </div>
               <div class="icon">
@@ -292,27 +277,22 @@ include('ceki.php');
               </div>
               <a class="small-box-footer"><i class="fas fa-lof"></i></a>
             </div>
+          </div>
                 <?php
                 }
                 ?>
-          </div>
 
           <!-- Selesai -->
           <div class="col-lg-3 col-6">
                 <?php 
-                $query = mysqli_query($qw, "SELECT * FROM pengaduan WHERE status='selesai'");
+                $query4 = mysqli_query($qw, "SELECT * FROM pengaduan WHERE status='selesai'");
                 $no = 1;
-                if($dat = mysqli_num_rows($query)) 
+                if($data4 = mysqli_num_rows($query4)) 
                 {
                 ?>
             <div class="small-box bg-success">
               <div class="inner">
-              <?php
-                if($dat > 0){
-                echo "<h3> $dat </h3>";
-                }else{
-                  echo "<h3>0</h3>";
-                }?>
+              <h3><?= $data4 ?></h3>
                 <p>Laporan yang telah selesai</p>
               </div>
               <div class="icon">
@@ -320,10 +300,10 @@ include('ceki.php');
               </div>
                <a class="small-box-footer"><i class="fas fa-lof"></i></a>
             </div>
+          </div>
                 <?php
                 }
                 ?>
-          </div>
           <!-- ./col -->
         </div>
         <!-- /.row (main row) -->
