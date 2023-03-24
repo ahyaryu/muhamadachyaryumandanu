@@ -37,10 +37,10 @@ $qll = mysqli_query($qq,"SELECT * FROM pengaduan WHERE id_pengaduan= $id");
                 <label>Jenis Pengaduan</label><br>
                 <select class="form-control form-control-sm-4" name="uku" id="uku">
                     <option value="<?= $gg['tentang'];?>"><?= $gg['tentang'];?></option>
-                    <option value="sampah">sampah</option>
+                    <option value="lingkungan">lingkungan</option>
                     <option value="jalan">jalan</option>
                     <option value="air">air</option>
-                    <option value="warga">warga</option>
+                    <option value="masyarakat">masyarakat</option>
                 </select>
             </div>
             <div class="form-group col-sm-12">
@@ -60,7 +60,8 @@ $qll = mysqli_query($qq,"SELECT * FROM pengaduan WHERE id_pengaduan= $id");
                 <img src="img/<?= $gg['foto'];?>" alt="foto gagal dimuat" width="300px">
             </div>
             <div class="form-group col-sm-6">
-            <input type="file" value="img/<?= $gg['foto'];?>" name="foto" class="form-control-file" id="exampleFormControlFile1" accept=".jpg, .jpeg, .png, .gif">
+            <input type="file" name="foto" class="form-control-file" id="exampleFormControlFile1" accept=".jpg, .jpeg, .png, .gif">
+            <input type="hidden" value="<?= $gg['foto'];?>" name="x">
             </div>
             <hr>
                 <button type="submit" name="dante" class="btn btn-success">update</button>

@@ -373,7 +373,7 @@ if ($pesan=="ul-salah"){
       timer: 5000
     });
   Toast.fire({
-      icon: 'success',
+      icon: 'error',
       title: 'Data Gagal Di Update'
   });
 
