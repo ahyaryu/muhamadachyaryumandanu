@@ -63,7 +63,7 @@ $petugas_update = mysqli_query($qw,"SELECT * FROM petugas WHERE id_petugas = '$i
           <?php
             while($gg = mysqli_fetch_assoc($petugas_update)){
           ?>
-        <form class="user" action="ceki.php" method="post">
+        <form class="user" action="updateusercek.php" method="post">
           <input type="hidden" name="idpetugas" value="<?= $gg['id_petugas']; ?>">
                 <div class="form-group row">
                   <div class="col-sm-12">

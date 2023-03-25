@@ -217,7 +217,7 @@ include "ceki.php";
             <!-- /.card-header -->
             <!-- card body -->
             <div class="card-body">
-              <form class="user" action="ceki.php" method="post">
+              <form class="user" action="regispetugascek.php" method="post">
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
                     <input type="text" name="nama" class="form-control form-control-user" placeholder="Nama" required>

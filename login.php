@@ -47,7 +47,7 @@ else
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">Selamat Datang</h1>
                   </div>
-                  <form class="user" action="cek.php" method="post">
+                  <form class="user" action="logincek1.php" method="post">
                     <div class="form-group">
                       <input type="text" name="user" class="form-control form-control-user" placeholder="Masukan Username" required>
                     </div>

@@ -15,7 +15,7 @@ include "cek.php";
         tulis pengaduan
     </div>
     <div class="card-body">
-        <form action="cek.php" method="post" class="form-horizontal" enctype="multipart/form-data">
+        <form action="laporancek.php" method="post" class="form-horizontal" enctype="multipart/form-data">
             <div class="form-group col-sm-4">
                 <label for="">tanggal pengaduan</label>
                 <input type="text" name="tgl_pengaduan" value="<?= date('Y-m-d');?>" class="form-control" readonly>

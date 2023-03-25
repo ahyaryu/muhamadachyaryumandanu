@@ -27,7 +27,7 @@ $qll = mysqli_query($qq,"SELECT * FROM pengaduan WHERE id_pengaduan= $id");
             <?php
             while($gg = mysqli_fetch_assoc($qll)){
             ?>
-        <form action="cek.php" method="post" class="form-horizontal" enctype="multipart/form-data">
+        <form action="updatelaporancek.php" method="post" class="form-horizontal" enctype="multipart/form-data">
             <input type="hidden" name="id" value="<?= $gg['id_pengaduan'];?>"">
             <div class="form-group col-sm-3">
                 <label for="">tanggal pengaduan</label>

@@ -281,7 +281,7 @@ include('ceki.php');
                             <span aria-hidden="true">&times;</span>
                           </button>
                         </div>
-                        <form id="quickForm" method="post" action="ceki.php">
+                        <form id="quickForm" method="post" action="tanggapancek.php">
                         <div class="modal-body">
                           <input type="hidden"  name="id" value="<?php echo $row['id_pengaduan']; ?>" >
                           <input type="hidden"  name="idt" value="<?php echo $row['id_tanggapan']; ?>" >

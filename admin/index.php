@@ -42,7 +42,7 @@ else
     <div class="card-body login-card-body">
       <p class="login-box-msg">Masuk untuk memulai sesi anda</p>
 
-      <form action="ceki.php" method="post">
+      <form action="logincek.php" method="post">
         <div class="input-group mb-3">
           <input type="text" class="form-control" name="users" placeholder="Username">
           <div class="input-group-append">
