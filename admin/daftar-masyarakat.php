@@ -236,7 +236,7 @@ include('ceki.php');
             <div class="card-body">
                 <?php 
                 $que = mysqli_query($qw, "SELECT * FROM masyarakat");
-                if(  mysqli_fetch_assoc($que)==0){
+                if(mysqli_num_rows($que) == 0){
                   echo"<font color='red'>belum ada masyarakat yang mendaftar</font>";
                 }else{
                 ?>
@@ -271,33 +271,48 @@ include('ceki.php');
                       <td><?php echo $data['telp']; ?></td>
                       <td><?php echo $data['username']; ?></td>
                       <td>
-                        <a href="#" type="button" class="badge badge-danger" data-toggle="modal" data-target="#hapus-modal" title="hapus"><i class="fas fa-trash"></i>hapus</a>
+                        <a href="#" 
+                          class="badge badge-danger btn-hapus" 
+                          data-nik="<?php echo $data['nik']; ?>" 
+                          data-toggle="modal" 
+                          data-target="#hapus-modal">
+                          <i class="fas fa-trash"></i> hapus
+                        </a>
                       </td>
                     </tr>
                       </div>
                     </div>
                   </div>
-                  <div class="modal fade" id="hapus-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                      <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">hapus</h5>
-                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                              <span aria-hidden="true">x</span>
-                            </button>
-                          </div>
-                          <div class="modal-body">Apakah yakin mau di hapus?</div>
-                          <div class="modal-footer">
-                            <button class="btn btn-secondary" type="button" data-dismiss="modal">tidak</button>
-                            <a class="btn btn-primary" href="hapus_masyarakat.php?idu=<?php echo $data['nik']; ?>">iya</a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                
                 <?php
                 }
                 ?>
+                <div class="modal fade" id="hapus-modal" tabindex="-1" role="dialog">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Hapus Data</h5>
+                        <button class="close" type="button" data-dismiss="modal">
+                          <span>&times;</span>
+                        </button>
+                      </div>
+                      
+                      <div class="modal-body">
+                        Apakah yakin mau menghapus data ini?
+                      </div>
+                      
+                      <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">
+                          Tidak
+                        </button>
+                        <a id="btn-hapus-link" class="btn btn-primary">
+                          Ya, Hapus
+                        </a>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
                 <div class="dropdown">
         <a class="btn btn-primary" href="print_masyarakat.php" role="button" target="_blank">
         <i class="fas fa-print"></i>Generate Akun Masyarakat
@@ -421,5 +436,11 @@ if ($pesan=="gagal1"){
 <?php
 }
 ?>
+<script>
+  $(document).on('click', '.btn-hapus', function() {
+    var nik = $(this).data('nik');
+    $('#btn-hapus-link').attr('href', 'hapus_masyarakat.php?idu=' + nik);
+  });
+</script>
 </body>
 </html>

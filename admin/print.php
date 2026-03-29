@@ -57,15 +57,7 @@ $html ='<!DOCTYPE html>
             <th style="width: 50mm;">tanggapan</th>
         </tr>';
 
-        foreach ($pengaduan as $key) {
-$html .= '<tr>
-            <td align="center">'.$key["id_pengaduan"].'</td>
-            <td align="center">'.$key["tgl_pengaduan"].'</td>
-            <td align="center">'.$key["isi_laporan"].'</td>
-            <td align="center"><img src="../img/'.$key["foto"].'" width="50px" alt="gambar tidak tersedia"></td>
-            <td align="center">'.$key["tanggapan"].'</td>
-        </tr>';
-        }
+     
 $html .= '</table>
 </body>
 </html>';

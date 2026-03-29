@@ -1,7 +1,6 @@
 <!-- login-->
 <?php
 include "cek.php";
-if(isset($_POST["kirim"])){
     $user = $_POST['user'];
     $pass = $_POST['pass'];
  
@@ -28,5 +27,4 @@ if(isset($_POST["kirim"])){
         header("location:login.php?pesan=gagal");
             exit;
     }
-}
 ?>
